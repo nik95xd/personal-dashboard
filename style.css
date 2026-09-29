@@ -470,6 +470,199 @@ h2 {
     font-size: 0.8rem;
 }
 
+.weather-main {
+    min-height: calc(100vh - 161px);
+    padding-top: 68px;
+    padding-bottom: 80px;
+}
+
+.weather-intro {
+    max-width: 650px;
+    margin-bottom: 34px;
+}
+
+.weather-intro h1 {
+    margin-bottom: 14px;
+}
+
+.weather-intro > p:last-child {
+    max-width: 540px;
+    color: var(--muted);
+}
+
+.weather-layout {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+    align-items: start;
+    gap: 22px;
+}
+
+.weather-form-panel,
+.weather-panel {
+    min-height: 310px;
+    padding: 26px;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.weather-form-panel h2,
+.weather-panel h2 {
+    margin-bottom: 20px;
+    font-size: 1.45rem;
+}
+
+.coordinate-fields {
+    display: grid;
+    gap: 15px;
+}
+
+.coordinate-fields label {
+    color: var(--muted);
+    font-size: 0.83rem;
+}
+
+.coordinate-fields input {
+    width: 100%;
+    min-height: 46px;
+    margin-top: 5px;
+    padding: 9px 11px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--page);
+    color: var(--ink);
+}
+
+.weather-submit {
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+    border: 0;
+    cursor: pointer;
+}
+
+.weather-submit:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+.weather-hint {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.weather-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-empty {
+    display: grid;
+    flex: 1;
+    place-content: center;
+    min-height: 220px;
+    color: var(--muted);
+    text-align: center;
+}
+
+.weather-empty[hidden],
+.weather-result[hidden] {
+    display: none;
+}
+
+.weather-empty-mark {
+    margin-bottom: 10px;
+    color: var(--accent);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.5rem;
+}
+
+.weather-empty p {
+    margin: 0;
+}
+
+.weather-result-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.weather-result-heading h3 {
+    margin: 0 0 5px;
+    color: var(--muted);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.weather-result-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.weather-temperature {
+    color: var(--accent);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 3.3rem;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.weather-condition {
+    margin-bottom: 4px;
+    font-size: 1.12rem;
+    font-weight: 700;
+}
+
+.weather-time {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: auto 0 0;
+    border-top: 1px solid var(--line);
+}
+
+.weather-details div {
+    padding: 15px 8px 0 0;
+}
+
+.weather-details dt {
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
+.weather-details dd {
+    margin: 3px 0 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.weather-status {
+    min-height: 24px;
+    margin: 16px 0 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.weather-attribution {
+    margin: 18px 0 0;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.weather-attribution a {
+    color: var(--accent);
+}
+
 @media (max-width: 760px) {
     .header-inner {
         align-items: flex-start;
@@ -519,6 +712,10 @@ h2 {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+
+    .weather-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
@@ -555,6 +752,29 @@ h2 {
 
     .calculator {
         padding: 19px;
+    }
+
+    .weather-main {
+        padding-top: 48px;
+        padding-bottom: 58px;
+    }
+
+    .weather-form-panel,
+    .weather-panel {
+        min-height: 0;
+        padding: 20px;
+    }
+
+    .weather-panel {
+        min-height: 290px;
+    }
+
+    .weather-result-heading {
+        gap: 8px;
+    }
+
+    .weather-temperature {
+        font-size: 2.8rem;
     }
 
     .footer-inner {

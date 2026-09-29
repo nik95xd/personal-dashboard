@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check current weather for geographic coordinates.">
+    <title>Current Weather | Personal Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html#home" aria-label="Personal Dashboard home">
+                <span class="brand-title">Personal Dashboard</span>
+                <span class="brand-subtitle">My personal space on the web</span>
+            </a>
+
+            <div class="header-actions">
+                <nav class="site-nav" aria-label="Main navigation">
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#projects">Projects</a>
+                    <a href="index.html#tools">Tools</a>
+                    <a href="index.html#about">About</a>
+                    <a href="weather.html" aria-current="page">Weather</a>
+                </nav>
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">
+                    Dark mode
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="weather-main section-wrap">
+        <div class="weather-intro">
+            <p class="eyebrow">Live conditions</p>
+            <h1>Weather by coordinates</h1>
+            <p>Enter a latitude and longitude to see the current weather at that location.</p>
+        </div>
+
+        <div class="weather-layout">
+            <section class="weather-form-panel" aria-labelledby="coordinate-title">
+                <p class="eyebrow">Choose a location</p>
+                <h2 id="coordinate-title">Coordinates</h2>
+                <form id="weather-form">
+                    <div class="coordinate-fields">
+                        <label for="latitude">
+                            Latitude
+                            <input id="latitude" name="latitude" type="number" min="-90" max="90" step="any" placeholder="e.g. 41.9028" required>
+                        </label>
+                        <label for="longitude">
+                            Longitude
+                            <input id="longitude" name="longitude" type="number" min="-180" max="180" step="any" placeholder="e.g. 12.4964" required>
+                        </label>
+                    </div>
+                    <button class="button button-primary weather-submit" type="submit">Get current weather <span aria-hidden="true">&#8594;</span></button>
+                    <p class="weather-hint">Latitude: -90 to 90. Longitude: -180 to 180.</p>
+                </form>
+            </section>
+
+            <section class="weather-panel" aria-labelledby="weather-panel-title">
+                <p class="eyebrow">Current conditions</p>
+                <h2 id="weather-panel-title">Weather report</h2>
+                <div class="weather-empty" id="weather-empty">
+                    <span class="weather-empty-mark" aria-hidden="true">&#9729;</span>
+                    <p>Your weather report will appear here.</p>
+                </div>
+                <div class="weather-result" id="weather-result" aria-live="polite" hidden>
+                    <div class="weather-result-heading">
+                        <div>
+                            <h3 id="weather-location"></h3>
+                            <p id="weather-time"></p>
+                        </div>
+                        <strong class="weather-temperature" id="weather-temperature"></strong>
+                    </div>
+                    <p class="weather-condition" id="weather-description"></p>
+                    <dl class="weather-details">
+                        <div>
+                            <dt>Feels like</dt>
+                            <dd id="weather-feels-like"></dd>
+                        </div>
+                        <div>
+                            <dt>Humidity</dt>
+                            <dd id="weather-humidity"></dd>
+                        </div>
+                        <div>
+                            <dt>Wind</dt>
+                            <dd id="weather-wind"></dd>
+                        </div>
+                        <div>
+                            <dt>Precipitation</dt>
+                            <dd id="weather-precipitation"></dd>
+                        </div>
+                    </dl>
+                </div>
+                <p class="weather-status" id="weather-status" role="status">Waiting for coordinates.</p>
+                <p class="weather-attribution">Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a>.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="section-wrap footer-inner">
+            <span>Personal Dashboard</span>
+            <span>Made for learning, one step at a time.</span>
+        </div>
+    </footer>
+</body>
+</html>
